@@ -12,9 +12,9 @@ public class PauseActive : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "Main")
-        {
-            PauseScreen.SetActive(true);
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "Main")
+        //{
+        //    PauseScreen.SetActive(true);
+        //}
     }
 }
