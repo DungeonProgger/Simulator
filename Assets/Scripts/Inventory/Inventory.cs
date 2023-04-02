@@ -8,36 +8,38 @@ public class Inventory : MonoBehaviour
     [SerializeField] private SelectionArea[] areas;
     private Dictionary<int, SelectionArea> selectionAreas = new Dictionary<int, SelectionArea>();
     private PlayerInputSystem _playerInput;
-    private double _degree;
+    private int _currentZone;
+    private SelectionArea _currentSelectionArea;
+    
     private double degree
     {
-        get { return _degree; }
+        get { return _currentZone; }
         set 
         {
             if (value > 330)
-                _degree = 12;
+                _currentZone = 12;
             else if (value > 300)
-                _degree = 11;
+                _currentZone = 11;
             else if (value > 270)
-                _degree = 10;
+                _currentZone = 10;
             else if (value > 240)
-                _degree = 9;
+                _currentZone = 9;
             else if (value > 210)
-                _degree = 8;
+                _currentZone = 8;
             else if (value > 180)
-                _degree = 7;
+                _currentZone = 7;
             else if (value > 150)
-                _degree = 6;
+                _currentZone = 6;
             else if (value > 120)
-                _degree = 5;
+                _currentZone = 5;
             else if (value > 90)
-                _degree = 4;
+                _currentZone = 4;
             else if (value > 60)
-                _degree = 3;
+                _currentZone = 3;
             else if (value > 30)
-                _degree = 2;
+                _currentZone = 2;
             else if (value > 0)
-                _degree = 1;
+                _currentZone = 1;
         }
     }
     private void OnEnable()
@@ -58,13 +60,22 @@ public class Inventory : MonoBehaviour
     private void Update()
     {
         Vector2 axisValue = _playerInput.UI.ChooseLeftArea.ReadValue<Vector2>();
+        if (axisValue.magnitude > 0.7f)
+        {
+            degree = Vector2.SignedAngle(Vector2.right, axisValue);
+        }
+        else
+        {
+            _currentZone = -1;
+        }
+
     }
     private void ChooseArea(int zone)
     {
         SelectionArea currentSelectionArea;
         if (selectionAreas.TryGetValue(zone, out currentSelectionArea))
         {
-            currentSelectionArea.Selected();
+            currentSelectionArea.Choosed();
         }
         this.gameObject.SetActive(false);
     }

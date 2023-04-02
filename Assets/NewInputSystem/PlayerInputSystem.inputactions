@@ -1,17 +1,26 @@
 {
-    "name": "Simulator",
+    "name": "PlayerInputSystem",
     "maps": [
         {
             "name": "Player",
             "id": "52c409f9-b16d-4361-859a-28c733d91a6e",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "OpenInventory",
                     "type": "Button",
                     "id": "2fb446f9-223e-47f3-8253-a5afff4d3d77",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CloseInventory",
+                    "type": "Button",
+                    "id": "1187548c-3f5f-4ce0-9ad9-c361c47eb49f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
                     "initialStateCheck": false
                 }
             ],
@@ -19,11 +28,22 @@
                 {
                     "name": "",
                     "id": "df7a3882-b93b-4b62-abdc-376538eafbe5",
-                    "path": "",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "OpenInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0debf1ef-38dc-48c0-9c11-f24cfde21201",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CloseInventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
