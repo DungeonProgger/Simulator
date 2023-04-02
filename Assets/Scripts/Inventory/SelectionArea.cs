@@ -1,30 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class SelectionArea : MonoBehaviour
 {
     [SerializeField] public int[] ZoneNumbers;
     [SerializeField] private GameObject selectobleObject;
-    private PlayerInputSystem _playerInput;
+    [SerializeField] private Color defaultColor;
+    [SerializeField] private Color selectableColor;
+    [SerializeField] private Image background;
 
     private void Start()
     {
-        _playerInput = new PlayerInputSystem();
-
-        //_playerInput.Player.LeftLeverUp.performed += ctx => InputLever(_leftLever, 15);
+        background.color = defaultColor;
     }
-    private void OnEnable()
-    {
-        _playerInput.Enable();
-    }
-
-    private void OnDisable()
-    {
-        _playerInput.Disable();
-    }
-    public void Selected()
+    public void Choosed()
     {
         Inventory nextInventory;
         if (selectobleObject.TryGetComponent<Inventory>(out nextInventory))
@@ -35,5 +25,9 @@ public class SelectionArea : MonoBehaviour
         {
 
         }
+    }
+    public void Selected()
+    {
+
     }
 }
