@@ -1,16 +1,19 @@
 public class Transition
 {
     public Tool.Types WorkingTool;
-    public GroundBlockCondition NextCondition;
-    public int Progress = 0;
+    public Condition NextCondition;
+    private int _progress = 0;
 
-    public Transition(Tool.Types workingTool, GroundBlockCondition nextCondition)
+    public Transition(Tool.Types workingTool, Condition nextCondition)
     {
         WorkingTool = workingTool;
         NextCondition = nextCondition;
     }
-    public void ProgressUp(int progress)
+    public bool ProgressUp(int progress)
     {
-        Progress += progress;
+        _progress += progress;
+        if (_progress > 100)
+            return true;
+        return false;
     }
 }

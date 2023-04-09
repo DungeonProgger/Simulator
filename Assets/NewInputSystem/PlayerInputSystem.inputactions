@@ -54,15 +54,6 @@
             "id": "774f4128-dce7-4855-8c68-956d504d312b",
             "actions": [
                 {
-                    "name": "ChooseLeftArea",
-                    "type": "Value",
-                    "id": "020589e2-a900-4286-9c71-f9910ccb1d21",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "ChooseRightArea",
                     "type": "Value",
                     "id": "504424bd-1352-4fc2-97ac-fa40b0f789c9",
@@ -73,17 +64,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "089616f7-2200-4509-ae61-10ef843a438b",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "XR;Gamepad",
-                    "action": "ChooseLeftArea",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "ca6e8ab1-9fa7-4034-8849-6742f2d7c14c",

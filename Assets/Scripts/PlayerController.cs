@@ -5,16 +5,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Inventory _mainInventory;
+    [SerializeField] private Inventory[] _otherInventories;
     private PlayerInputSystem _playerInputSystem;
     private ContinuousTurnProviderBase _rotator;
-    private bool _inventoryIsOpen = false;
     private void Awake()
     {
         _playerInputSystem = new PlayerInputSystem();
-
+        _rotator = GetComponent<ContinuousTurnProviderBase>();
 
         _playerInputSystem.Player.OpenInventory.performed += ctx => StateInventoryChange(true);
         _playerInputSystem.Player.CloseInventory.performed += ctx => StateInventoryChange(false);
+
+        StateInventoryChange(false);
     }
     private void OnEnable()
     {
@@ -29,6 +31,8 @@ public class PlayerController : MonoBehaviour
     private void StateInventoryChange(bool inventoryOpen)
     {
         _mainInventory.gameObject.SetActive(inventoryOpen);
+        foreach (Inventory inventory in _otherInventories)
+            inventory.gameObject.SetActive(false);
         _rotator.enabled = !inventoryOpen;
     }
 }
