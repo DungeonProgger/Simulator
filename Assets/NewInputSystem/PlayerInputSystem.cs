@@ -76,15 +76,6 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             ""id"": ""774f4128-dce7-4855-8c68-956d504d312b"",
             ""actions"": [
                 {
-                    ""name"": ""ChooseLeftArea"",
-                    ""type"": ""Value"",
-                    ""id"": ""020589e2-a900-4286-9c71-f9910ccb1d21"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""ChooseRightArea"",
                     ""type"": ""Value"",
                     ""id"": ""504424bd-1352-4fc2-97ac-fa40b0f789c9"",
@@ -95,17 +86,6 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""089616f7-2200-4509-ae61-10ef843a438b"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR;Gamepad"",
-                    ""action"": ""ChooseLeftArea"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""ca6e8ab1-9fa7-4034-8849-6742f2d7c14c"",
@@ -189,7 +169,6 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         m_Player_CloseInventory = m_Player.FindAction("CloseInventory", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_ChooseLeftArea = m_UI.FindAction("ChooseLeftArea", throwIfNotFound: true);
         m_UI_ChooseRightArea = m_UI.FindAction("ChooseRightArea", throwIfNotFound: true);
     }
 
@@ -306,13 +285,11 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     // UI
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
-    private readonly InputAction m_UI_ChooseLeftArea;
     private readonly InputAction m_UI_ChooseRightArea;
     public struct UIActions
     {
         private @PlayerInputSystem m_Wrapper;
         public UIActions(@PlayerInputSystem wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ChooseLeftArea => m_Wrapper.m_UI_ChooseLeftArea;
         public InputAction @ChooseRightArea => m_Wrapper.m_UI_ChooseRightArea;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
@@ -323,9 +300,6 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
-            @ChooseLeftArea.started += instance.OnChooseLeftArea;
-            @ChooseLeftArea.performed += instance.OnChooseLeftArea;
-            @ChooseLeftArea.canceled += instance.OnChooseLeftArea;
             @ChooseRightArea.started += instance.OnChooseRightArea;
             @ChooseRightArea.performed += instance.OnChooseRightArea;
             @ChooseRightArea.canceled += instance.OnChooseRightArea;
@@ -333,9 +307,6 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IUIActions instance)
         {
-            @ChooseLeftArea.started -= instance.OnChooseLeftArea;
-            @ChooseLeftArea.performed -= instance.OnChooseLeftArea;
-            @ChooseLeftArea.canceled -= instance.OnChooseLeftArea;
             @ChooseRightArea.started -= instance.OnChooseRightArea;
             @ChooseRightArea.performed -= instance.OnChooseRightArea;
             @ChooseRightArea.canceled -= instance.OnChooseRightArea;
@@ -408,7 +379,6 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     }
     public interface IUIActions
     {
-        void OnChooseLeftArea(InputAction.CallbackContext context);
         void OnChooseRightArea(InputAction.CallbackContext context);
     }
 }

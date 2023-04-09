@@ -6,21 +6,12 @@ public abstract class Tool : MonoBehaviour
     {
         Rake = 1,
         Shovel = 2,
+        Watering—an = 3,
     }
-    protected enum InteractionsWithLayers
-    {
-        Ignore = 1,
-        Work = 2,
-        Collide = 3,
-    }
-    [SerializeField] protected Types TypeOfTool;
-    [SerializeField] protected int Power;
+    public abstract Types Type { get; protected set; }
+    [SerializeField] public int Power { get; protected set; }
     [SerializeField] protected GameObject Trigger;
     [SerializeField] protected GameObject Collider;
-    private void OnTriggerEnter(Collider other)
-    {
-        GroundBlock.Worked(TypeOfTool, Power);
-    }
     public void ChangeState(bool isOnHand)
     {
         Collider.SetActive(false);

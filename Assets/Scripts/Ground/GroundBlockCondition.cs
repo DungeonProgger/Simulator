@@ -1,29 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundBlockCondition
+public class GroundBlockCondition : Condition
 {
-    public List<Transition> Transitions = new List<Transition>();
-    public GroundBlockCondition(Tool.Types tool,GroundBlockCondition nextCondition)
+    public GroundBlockCondition(Tool.Types tool,GroundBlockCondition nextCondition, GameObject model)
     {
         Transitions.Add(new Transition(tool, nextCondition));
+        Model = model;
     }
-    public GroundBlockCondition(List<Tool.Types> tools,List<GroundBlockCondition> nextConditions)
+    public GroundBlockCondition(List<Tool.Types> tools,List<GroundBlockCondition> nextConditions, GameObject model)
     {
         for (int i = 0; i < tools.Count; i++)
         {
             Transitions.Add(new Transition(tools[i], nextConditions[i]));
-        }   
-    }
-    public Transition FindTransitionWithTool(Tool.Types typeOfTool)
-    {
-        foreach (var transition in Transitions)
-        {
-            if (transition.WorkingTool == typeOfTool)
-            {
-                return transition;
-            }
         }
-        return null;
+        Model = model;
     }
+    
 }
