@@ -6,11 +6,11 @@ using UnityEngine.InputSystem;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private SelectionArea[] areas;
+    [SerializeField] private Camera _camera;
     private Dictionary<int, SelectionArea> selectionAreas = new Dictionary<int, SelectionArea>();
     private PlayerInputSystem _playerInput;
     private int _currentZone;
     private SelectionArea _currentSelectionArea;
-    private Camera _camera;
     
     private double degree
     {
@@ -54,7 +54,6 @@ public class Inventory : MonoBehaviour
     }
     private void Awake()
     {
-        _camera = Camera.main;
         _playerInput = new PlayerInputSystem();
         foreach (var area in areas)
             foreach (var zoneNumber in area.ZoneNumbers)
