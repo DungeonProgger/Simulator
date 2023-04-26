@@ -12,7 +12,7 @@ public class CollisionTrigger : MonoBehaviour
     IEnumerator ReloadingXRGrab()
     {
         transform.parent.GetComponent<XRGrabInteractable>().enabled = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
         transform.parent.GetComponent<XRGrabInteractable>().enabled = true; 
     }
 }

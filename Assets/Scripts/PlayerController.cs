@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Inventory[] _otherInventories;
     private PlayerInputSystem _playerInputSystem;
     private ContinuousTurnProviderBase _rotator;
+    public bool IsMoveWithStick { get; private set; }
     private void Awake()
     {
         _playerInputSystem = new PlayerInputSystem();
@@ -17,6 +18,10 @@ public class PlayerController : MonoBehaviour
         _playerInputSystem.Player.CloseInventory.performed += ctx => StateInventoryChange(false);
 
         StateInventoryChange(false);
+    }
+    private void Update()
+    {
+        IsMoveWithStick = _playerInputSystem.Player.Move.ReadValue<Vector2>().magnitude != 0;
     }
     private void OnEnable()
     {
