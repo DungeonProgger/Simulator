@@ -10,7 +10,7 @@ public class NpcMovement : MonoBehaviour
     [SerializeField] private float distanceToChangePoint;
     int currentPoint = -1;
 
-    private float timer = 1f;
+    private int timer = 100000;
 
     void Start()
     {
@@ -22,9 +22,9 @@ public class NpcMovement : MonoBehaviour
     {
         bool trigger = gameObject.GetComponent<Animator>().GetBool("Stay");
         agent.enabled = true;
+        trigger = false;
         if (agent.remainingDistance < distanceToChangePoint)
-        {
-            trigger = true;
+        {           
             trigger = false;
             currentPoint++;                                                                    
             if (currentPoint == Points.Length)
@@ -32,6 +32,6 @@ public class NpcMovement : MonoBehaviour
                 currentPoint = -1;
             }
             agent.destination = Points[currentPoint].position;
-        }
+        }        
     }
 }
