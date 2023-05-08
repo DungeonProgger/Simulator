@@ -1,42 +1,28 @@
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class TwoHandGrabInteractable : XRGrabInteractable
 {
-    /*
-    public List<XRSimpleInteractable> secondHandGrabPoints = new List<XRSimpleInteractable> ();
-    private XRBaseInteractor secondInteractor;
-    private void Start()
+    [SerializeField] private Transform _mainModel;
+    [SerializeField] private IXRSelectInteractor _leftHand;
+    [SerializeField] private IXRSelectInteractor _rightHand;
+    private void Update()
     {
-        foreach (XRSimpleInteractable secondHandGrabPoint in secondHandGrabPoints)
+        if (!isSelected)
         {
-            secondHandGrabPoint.onSelectEnter.AddListener(OnSecondHandGrab);
-            secondHandGrabPoint.onSelectExit.AddListener(OnSecondHandRelease);
+            transform.position = _mainModel.position;
+            transform.rotation = _mainModel.rotation;
+        }
+        else
+        {
+            if (IsSelectableBy(_leftHand))
+            {
+                Debug.Log(_leftHand);
+            }
+            else if (IsSelectableBy(_rightHand))
+            {
+                Debug.Log(_rightHand);
+            }
         }
     }
-
-    public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
-    {
-        if (secondInteractor && selectingInteractor)
-            selectingInteractor.attachTransform.rotation = Quaternion.LookRotation(secondInteractor.attachTransform.position - selectingInteractor.attachTransform.position);
-        base.ProcessInteractable(updatePhase);
-    }
-    public void OnSecondHandGrab(XRBaseInteractor interactor)
-    {
-        secondInteractor = interactor;
-    }    
-    public void OnSecondHandRelease(XRBaseInteractor interactor)
-    {
-        secondInteractor = null;
-    }
-    public override bool IsSelectableBy(IXRSelectInteractor interactor)
-    {
-        bool isAlreadyGrabble = isSelected && !interactor.Equals(isSelected);
-        return base.IsSelectableBy(interactor) && !isAlreadyGrabble;
-    }
-    */
 }
