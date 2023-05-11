@@ -26,11 +26,12 @@ public class Shop : MonoBehaviour
     public void BuySeeds()
     {
         ShopInventory ShopInventoryScript = GameObject.Find("ShopInventory").GetComponent<ShopInventory>();
-        ShopInventoryScript.money -= 5;
+        if (ShopInventoryScript.money >= 5) ShopInventoryScript.money -= 5;
     }
     public void BuyShovel()
     {
         ShopInventory ShopInventoryScript = GameObject.Find("ShopInventory").GetComponent<ShopInventory>();
-        ShopInventoryScript.money -= 20;
+        if (ShopInventoryScript.money >= 20) ShopInventoryScript.money -= 20;
+
     }
 }
