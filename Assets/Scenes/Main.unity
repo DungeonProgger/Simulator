@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44063735, g: 1.0690928, b: 1.2178558, a: 1}
+  m_IndirectSpecularColor: {r: 0.44064322, g: 1.0715809, b: 1.2180147, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 12147333}
   - component: {fileID: 12147335}
   - component: {fileID: 12147334}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1973,7 +1973,7 @@ GameObject:
   - component: {fileID: 177949923}
   - component: {fileID: 177949925}
   - component: {fileID: 177949924}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4118,7 +4118,7 @@ GameObject:
   - component: {fileID: 299795029}
   - component: {fileID: 299795028}
   - component: {fileID: 299795032}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BuyDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8510,7 +8510,7 @@ GameObject:
   - component: {fileID: 453414020}
   - component: {fileID: 453414022}
   - component: {fileID: 453414021}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8590,7 +8590,7 @@ GameObject:
   - component: {fileID: 456626458}
   - component: {fileID: 456626460}
   - component: {fileID: 456626459}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9981,7 +9981,7 @@ GameObject:
   - component: {fileID: 529917546}
   - component: {fileID: 529917548}
   - component: {fileID: 529917547}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: MoneyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11463,7 +11463,7 @@ GameObject:
   - component: {fileID: 638106707}
   - component: {fileID: 638106709}
   - component: {fileID: 638106708}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ShovelImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11733,7 +11733,7 @@ GameObject:
   - component: {fileID: 643009317}
   - component: {fileID: 643009319}
   - component: {fileID: 643009318}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TomatsCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11844,7 +11844,7 @@ GameObject:
   - component: {fileID: 649574969}
   - component: {fileID: 649574971}
   - component: {fileID: 649574970}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11885,7 +11885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.69411767, g: 0.8666667, b: 0.68235296, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -15888,7 +15888,7 @@ GameObject:
   - component: {fileID: 898366249}
   - component: {fileID: 898366248}
   - component: {fileID: 898366252}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SellDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15999,7 +15999,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4094
   m_RaycastTriggerInteraction: 1
 --- !u!1 &903601502
 GameObject:
@@ -16433,7 +16433,7 @@ GameObject:
   - component: {fileID: 939835735}
   - component: {fileID: 939835737}
   - component: {fileID: 939835736}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TomatsCost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16475,7 +16475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -19281,7 +19281,7 @@ GameObject:
   - component: {fileID: 1101019361}
   - component: {fileID: 1101019360}
   - component: {fileID: 1101019359}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BuyShovel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20778,7 +20778,7 @@ GameObject:
   - component: {fileID: 1166201835}
   - component: {fileID: 1166201834}
   - component: {fileID: 1166201833}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BuySeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21031,7 +21031,7 @@ GameObject:
   - component: {fileID: 1178158282}
   - component: {fileID: 1178158284}
   - component: {fileID: 1178158283}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27026,7 +27026,7 @@ GameObject:
   - component: {fileID: 1577758389}
   - component: {fileID: 1577758391}
   - component: {fileID: 1577758390}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SeedImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30040,7 +30040,7 @@ GameObject:
   - component: {fileID: 1748662212}
   - component: {fileID: 1748662211}
   - component: {fileID: 1748662210}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Tomats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30061,7 +30061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -30118,7 +30118,8 @@ GameObject:
   - component: {fileID: 1749971687}
   - component: {fileID: 1749971686}
   - component: {fileID: 1749971685}
-  m_Layer: 5
+  - component: {fileID: 1749971688}
+  m_Layer: 0
   m_Name: SellButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30240,6 +30241,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749971683}
   m_CullTransparentMesh: 1
+--- !u!114 &1749971688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749971683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4094
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &1754183565
 GameObject:
   m_ObjectHideFlags: 0
@@ -33271,7 +33291,7 @@ GameObject:
   - component: {fileID: 1900814264}
   - component: {fileID: 1900814266}
   - component: {fileID: 1900814265}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TomatsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33894,7 +33914,7 @@ GameObject:
   - component: {fileID: 1927012226}
   - component: {fileID: 1927012228}
   - component: {fileID: 1927012227}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33935,7 +33955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -35317,7 +35337,7 @@ GameObject:
   - component: {fileID: 2007932142}
   - component: {fileID: 2007932144}
   - component: {fileID: 2007932143}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: MoneyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35358,7 +35378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -37376,13 +37396,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2144822680}
   - component: {fileID: 2144822679}
-  - component: {fileID: 2144822678}
   - component: {fileID: 2144822684}
   - component: {fileID: 2144822683}
   - component: {fileID: 2144822682}
   - component: {fileID: 2144822681}
   - component: {fileID: 2144822685}
   - component: {fileID: 2144822686}
+  - component: {fileID: 2144822687}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -37390,20 +37410,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2144822678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144822677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ActionAssets:
-  - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &2144822679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37581,6 +37587,20 @@ MonoBehaviour:
   _otherInventories:
   - {fileID: 695357823}
   - {fileID: 1065736801}
+--- !u!114 &2144822687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144822677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ActionAssets:
+  - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1001 &2147103469
 PrefabInstance:
   m_ObjectHideFlags: 0
