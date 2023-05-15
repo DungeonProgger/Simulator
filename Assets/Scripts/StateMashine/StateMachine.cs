@@ -23,8 +23,10 @@ public abstract class StateMachine : MonoBehaviour
     protected void ChangeModel(GameObject newModel)
     {
         foreach (var model in Models)
-            if (model.gameObject != this.gameObject)
+            if (model.gameObject != this.gameObject && model.gameObject.tag != "SpawnPoint")
                 model.gameObject.SetActive(false);
         newModel.SetActive(true);
+        for (int i = 0; i < newModel.transform.childCount; i++)
+            newModel.transform.GetChild(i).gameObject.SetActive(true);
     }
 }

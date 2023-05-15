@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tool
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - GroundBlock
   - Model
   - SecondHandGrab
-  - Terrain
+  - VisualHand
   - 
   - 
   - 

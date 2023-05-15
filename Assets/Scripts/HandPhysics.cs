@@ -4,7 +4,7 @@ public class HandPhysics : MonoBehaviour
 {
     [SerializeField] private Transform _virtualHand;
     [SerializeField] private PlayerController controller;
-    [SerializeField] private float Speed;
+    [SerializeField] private float _maxRotationChange;
 
     protected Transform _currentTarget;
     protected Rigidbody _rigidbody;
@@ -19,7 +19,7 @@ public class HandPhysics : MonoBehaviour
         if (!_isMoveWithStick)
         {
             var positionDelta = _currentTarget.position - _rigidbody.position;
-            var force = positionDelta * 5000 - _rigidbody.velocity * 50;
+            var force = positionDelta * 3200 - _rigidbody.velocity * 120;
             _rigidbody.AddForce(force);
 
             var rotationDifference = _currentTarget.rotation * Quaternion.Inverse(_rigidbody.rotation);
@@ -30,22 +30,16 @@ public class HandPhysics : MonoBehaviour
 
             var rotationDifferenceInDegree = angleDegree * rotationAxis;
 
-            _rigidbody.angularVelocity =  rotationDifferenceInDegree / Time.fixedDeltaTime * Mathf.Deg2Rad;
+            var angularVelocity = rotationDifferenceInDegree / Time.fixedDeltaTime * Mathf.Deg2Rad;
+            if (!float.IsNaN(angularVelocity.x) && !float.IsInfinity(angularVelocity.x))
+            {
 
-            //_rigidbody.angularVelocity *= 1;
-            //Vector3 angularVelocity = FindNewAngularVelicity();
+                _rigidbody.angularVelocity = angularVelocity;
+            }
         }
     }
-    private void FindNewAngularVelicity()
-    {
-        Quaternion difference = _currentTarget.rotation * Quaternion.Inverse(_rigidbody.rotation);
-        difference.ToAngleAxis(out float angleDegree, out Vector3 rotationAxis);
 
-        if (angleDegree > 180)
-            angleDegree -= 360;
-    }
-
-    private void LateUpdate()
+    private void Update()
     {
         if (_isMoveWithStick)
         {

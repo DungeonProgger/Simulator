@@ -11,5 +11,4 @@ public abstract class Tool : MonoBehaviour
     }
     public abstract Types Type { get; protected set; }
     [SerializeField] public int Power;
-
 }
