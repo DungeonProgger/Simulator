@@ -51,6 +51,8 @@ MonoBehaviour:
   - {fileID: 4019070370660001545}
   - {fileID: 5311407415135559308}
   - {fileID: 4199620119074376024}
+  type: 1
+  FruitsCount: 0
 --- !u!1 &4253635437349676480
 GameObject:
   m_ObjectHideFlags: 0
