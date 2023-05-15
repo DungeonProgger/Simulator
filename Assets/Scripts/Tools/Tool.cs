@@ -11,15 +11,4 @@ public abstract class Tool : MonoBehaviour
     }
     public abstract Types Type { get; protected set; }
     [SerializeField] public int Power;
-    [SerializeField] protected GameObject Trigger;
-    [SerializeField] protected GameObject Collider;
-    public void ChangeState(bool isOnHand)
-    {
-        Collider.SetActive(false);
-        Trigger.SetActive(false);
-        if (isOnHand)
-            Trigger.SetActive(true);
-        else
-            Collider.SetActive(true);
-    }
 }

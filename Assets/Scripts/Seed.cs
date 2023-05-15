@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Seed : MonoBehaviour
+public class Seed : MonoBehaviour
 {
     public enum GroundTypes
     {
@@ -14,7 +14,12 @@ public abstract class Seed : MonoBehaviour
         Potato = 1,
         Tomato = 2,
     }
-    public abstract GroundTypes Type { get; protected set; }
+    [SerializeField] public GroundTypes Type;
 
     public Plant Plant;
+
+    private void Update()
+    {
+        //  if (transform.rotation)
+    }
 }

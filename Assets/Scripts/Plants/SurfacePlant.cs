@@ -8,7 +8,7 @@ public class SurfacePlant : Plant
     [SerializeField] private GameObject SproutModel;
     [SerializeField] private GameObject CropModel;
 
-    [SerializeField] private GameObject[] Fruits;
+    [SerializeField] private Fruits fruits;
 
     private Condition Default;
     private Condition Sprout;
@@ -16,9 +16,22 @@ public class SurfacePlant : Plant
     private Condition CropWithFruit;
     protected override void Growing()
     {
-        CurrentTime += Time.deltaTime;
-        if (CurrentTime > 0.3 * GrowthTime) 
-            isGrowingDone = true;
+        if (CurrentCondtion != CropWithFruit)
+        {
+            CurrentTime += Time.deltaTime;
+            if (CurrentTime > GrowthTime)
+            {
+                isGrowingDone = true;
+                CurrentTime = 0;
+            }
+        }
+        else
+        {
+            fruits.gameObject.SetActive(true);
+            if (fruits.FruitsCount == 0)
+                isGrowed = true;
+        }
+
     }
     protected override void InitializationCondition()
     {

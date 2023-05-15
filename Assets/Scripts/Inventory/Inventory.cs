@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
     private PlayerInputSystem _playerInput;
     private int _currentZone;
     private SelectionArea _currentSelectionArea;
+    public int tomat = 2;
     
     private double degree
     {
@@ -62,7 +63,7 @@ public class Inventory : MonoBehaviour
     private void Update()
     {
         transform.LookAt(_camera.transform);
-        Vector2 axisValue = _playerInput.UI.ChooseRightArea.ReadValue<Vector2>() ;
+        Vector2 axisValue = _playerInput.UI.ChooseRightArea.ReadValue<Vector2>();
         if (axisValue.magnitude > 0.7f)
         {
             var currentDegree = Vector2.SignedAngle(Vector2.right, axisValue);

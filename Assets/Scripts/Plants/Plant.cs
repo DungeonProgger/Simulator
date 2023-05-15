@@ -7,7 +7,7 @@ public abstract class Plant : StateMachine
 
     protected bool isGrowingDone = false;
 
-    public bool isGrowed = false;
+    public bool isGrowed { get; protected set; } = false;
 
     public Seed.Types Type;
 
@@ -16,7 +16,7 @@ public abstract class Plant : StateMachine
     protected void Update()
     {
         Growing();
-        if (isGrowingDone) ;
+        if (isGrowingDone) Debug.Log("Need Water");
         //IconNeedWather
         if (isGrowed)
             Destroy(gameObject);
@@ -25,7 +25,7 @@ public abstract class Plant : StateMachine
     protected void OnTriggerEnter(Collider other)
     {
         var workingTool = other.GetComponent<Tool>();
-        if (CurrentCondtion.FindTransitionWithTool(workingTool.Type) != null)
+        if (workingTool != null && CurrentCondtion.FindTransitionWithTool(workingTool.Type) != null )
             Worked(workingTool.Type, workingTool.Power);
     }
 
