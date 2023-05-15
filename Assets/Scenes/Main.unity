@@ -40,7 +40,15 @@ RenderSettings:
   m_Sun: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.44063726, g: 1.0690926, b: 1.2178557, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.44064322, g: 1.0715809, b: 1.2180147, a: 1}
+>>>>>>> parent of c02868f (Sinhronization)
+=======
+  m_IndirectSpecularColor: {r: 0.44064322, g: 1.0715809, b: 1.2180147, a: 1}
+>>>>>>> parent of c02868f (Sinhronization)
 =======
   m_IndirectSpecularColor: {r: 0.44064322, g: 1.0715809, b: 1.2180147, a: 1}
 >>>>>>> parent of c02868f (Sinhronization)
@@ -3792,7 +3800,13 @@ RectTransform:
   - {fileID: 456626458}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of c02868f (Sinhronization)
+=======
+>>>>>>> parent of c02868f (Sinhronization)
 =======
 >>>>>>> parent of c02868f (Sinhronization)
   - {fileID: 12147333}
@@ -7763,6 +7777,12 @@ MonoBehaviour:
 =======
   m_Color: {r: 0.69411767, g: 0.8666667, b: 0.68235296, a: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of c02868f (Sinhronization)
+=======
+>>>>>>> parent of c02868f (Sinhronization)
+=======
 >>>>>>> parent of c02868f (Sinhronization)
 =======
 >>>>>>> parent of c02868f (Sinhronization)
@@ -14990,7 +15010,15 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     m_Bits: 4294967295
+=======
+    m_Bits: 4094
+>>>>>>> parent of c02868f (Sinhronization)
+=======
+    m_Bits: 4094
+>>>>>>> parent of c02868f (Sinhronization)
 =======
     m_Bits: 4094
 >>>>>>> parent of c02868f (Sinhronization)
@@ -29147,7 +29175,15 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     m_Bits: 4294967295
+=======
+    m_Bits: 4094
+>>>>>>> parent of c02868f (Sinhronization)
+=======
+    m_Bits: 4094
+>>>>>>> parent of c02868f (Sinhronization)
 =======
     m_Bits: 4094
 >>>>>>> parent of c02868f (Sinhronization)
