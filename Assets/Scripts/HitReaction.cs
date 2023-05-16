@@ -12,12 +12,5 @@ public class HitReaction : MonoBehaviour
         }
         gameObject.GetComponent<Animator>().SetTrigger("Start");
     }
-    private void OnTriggerExit(Collider col)
-    {
-        if (!col.CompareTag("Tool"))
-        {
-            return;
-        }
-        gameObject.GetComponent<Animator>().SetTrigger("Stop");
-    }    
+    
 }

@@ -9,9 +9,9 @@ public class FruitsHandler : MonoBehaviour
         Tomato = 1,
         Potato = 2
     };
-    public int tomatoCount { get; private set; } = 0;
-    public int potatoCount { get; private set; } = 0;
-    public int money { get; private set; } = 0;
+    public int tomatoCount = 5;
+    public int potatoCount = 5;
+    public int money = 5;
 
     public void AddFruits(int count, Type type)
     {
@@ -19,10 +19,5 @@ public class FruitsHandler : MonoBehaviour
             tomatoCount += count;
         else if (type == Type.Potato)
             potatoCount += count;
-    }
-
-    public void AddMoney(int count)
-    {
-        money += count;
     }
 }
