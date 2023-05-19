@@ -3868,6 +3868,7 @@ RectTransform:
   - {fileID: 334613383}
   - {fileID: 239146717}
   - {fileID: 1612269592}
+  - {fileID: 1896580260}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25120,6 +25121,7 @@ GameObject:
   - component: {fileID: 1534821251}
   - component: {fileID: 1534821250}
   - component: {fileID: 1534821249}
+  - component: {fileID: 1534821252}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -25205,6 +25207,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534821247}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1534821252
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534821247}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1539121614
 GameObject:
   m_ObjectHideFlags: 0
@@ -31959,6 +31977,82 @@ Transform:
   m_Father: {fileID: 1076957719}
   m_RootOrder: 87
   m_LocalEulerAnglesHint: {x: 0, y: 130.32, z: 0}
+--- !u!1 &1896580259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1896580260}
+  - component: {fileID: 1896580262}
+  - component: {fileID: 1896580261}
+  m_Layer: 0
+  m_Name: Purchases (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1896580260
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896580259}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.27522, y: 0.27522, z: 0.27522}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 299795031}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.4, y: 129.3}
+  m_SizeDelta: {x: 491, y: 152}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1896580261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896580259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 45e4b02c2b8f0bc4a953e002a77975b1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1896580262
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896580259}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1900551574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33469,7 +33563,9 @@ MonoBehaviour:
   CountOfTomats: {fileID: 1900814265}
   CountOfMoneyForTomats: {fileID: 643009318}
   BuySeedsButton: {fileID: 2013601068}
+  BuyShowelButton: {fileID: 1978463549}
   PurchasesImage: {fileID: 1453907775}
+  PurchasesImage1: {fileID: 1896580261}
   NewSeeds: {fileID: 1312004020}
 --- !u!114 &1971940008
 MonoBehaviour:

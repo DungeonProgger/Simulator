@@ -10,7 +10,9 @@ public class Shop : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Text CountOfTomats;
     [SerializeField] private UnityEngine.UI.Text CountOfMoneyForTomats;
     [SerializeField] private GameObject BuySeedsButton;
+    [SerializeField] private GameObject BuyShowelButton;
     [SerializeField] private UnityEngine.UI.Image PurchasesImage;
+    [SerializeField] private UnityEngine.UI.Image PurchasesImage1;
     [SerializeField] private GameObject NewSeeds;
 
     private void Start()
@@ -18,6 +20,8 @@ public class Shop : MonoBehaviour
         NewSeeds.SetActive(false);
         PurchasesImage.enabled = false;
         BuySeedsButton.SetActive(true);
+        BuyShowelButton.SetActive(true);
+        PurchasesImage1.enabled = false;
     }
     private void Update()
     {
@@ -47,9 +51,11 @@ public class Shop : MonoBehaviour
     public void BuyShovel()
     {
         FruitsHandler fruitsHandlerScript = GameObject.Find("Player").GetComponent<FruitsHandler>();
-        Tool ToolScript = GameObject.Find("Tool").GetComponent<Tool>();
-        if (fruitsHandlerScript.money >= 20) 
+        Tool ToolScript = GameObject.Find("WorkingPart").GetComponent<Shovel>();
+        if (fruitsHandlerScript.money >= 20 && BuyShowelButton.activeSelf == true) 
         {
+            BuyShowelButton.SetActive(false);
+            PurchasesImage1.enabled = true;
             fruitsHandlerScript.money -= 20;
             ToolScript.Power = 100;
         }
