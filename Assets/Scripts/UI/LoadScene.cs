@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class LoadScene : MonoBehaviour
 {
@@ -12,44 +9,31 @@ public class LoadScene : MonoBehaviour
     private Animator componentAnimator;
     private AsyncOperation loadingSceneOperation;
 
-   [SerializeField] private Slider _slider;
-   [SerializeField] private Text _text;
-
     public static void SwitchToScene(string sceneName)
     {
+        instance.gameObject.SetActive(true);
         instance.componentAnimator.SetTrigger("In");
 
         instance.loadingSceneOperation = SceneManager.LoadSceneAsync(sceneName);
 
         instance.loadingSceneOperation.allowSceneActivation = false;
-
-        //instance._slider.value = 0;
     }
 
     private void Start()
     {
         instance = this;
+        instance.gameObject.SetActive(false);
 
         componentAnimator = GetComponent<Animator>();
 
         if (shouldPlayOpeningAnimation)
         {
+            instance.gameObject.SetActive(true);
             componentAnimator.SetTrigger("Out");
 
             shouldPlayOpeningAnimation = false;
         }
     }
-
-    /*private void Update()
-    {
-        if (loadingSceneOperation != null)
-        {
-            _text.text = Mathf.RoundToInt(loadingSceneOperation.progress * 100) + "%";
-            
-            _slider.value = Mathf.Clamp01(loadingSceneOperation.progress/ .9f);
-        }
-    }
-    */
     public void OnAnimationOver()
     {
         shouldPlayOpeningAnimation = true;

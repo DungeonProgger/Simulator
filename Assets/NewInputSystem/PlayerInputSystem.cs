@@ -53,6 +53,24 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""OpenPause"",
+                    ""type"": ""Button"",
+                    ""id"": ""04696331-443e-402c-895f-37940e36d75e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PauseDisactive"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e256130-e00d-4878-aaf9-6ff992d6a042"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -108,6 +126,50 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ae19d2e-71c5-42eb-a866-d63e0b0776e4"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenPause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2fb2f009-7568-48e1-8b9d-55ff4a956a88"",
+                    ""path"": ""<OculusTouchController>{LeftHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenPause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""936431e1-7680-412a-9886-4010a22f0028"",
+                    ""path"": ""<OculusTouchController>{LeftHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseDisactive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a22345db-9f0e-4acb-8081-4e978833a3b0"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseDisactive"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -729,6 +791,8 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         m_Player_OpenInventory = m_Player.FindAction("OpenInventory", throwIfNotFound: true);
         m_Player_CloseInventory = m_Player.FindAction("CloseInventory", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_OpenPause = m_Player.FindAction("OpenPause", throwIfNotFound: true);
+        m_Player_PauseDisactive = m_Player.FindAction("PauseDisactive", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -806,6 +870,8 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_OpenInventory;
     private readonly InputAction m_Player_CloseInventory;
     private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_OpenPause;
+    private readonly InputAction m_Player_PauseDisactive;
     public struct PlayerActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -813,6 +879,8 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         public InputAction @OpenInventory => m_Wrapper.m_Player_OpenInventory;
         public InputAction @CloseInventory => m_Wrapper.m_Player_CloseInventory;
         public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @OpenPause => m_Wrapper.m_Player_OpenPause;
+        public InputAction @PauseDisactive => m_Wrapper.m_Player_PauseDisactive;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -831,6 +899,12 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @OpenPause.started += instance.OnOpenPause;
+            @OpenPause.performed += instance.OnOpenPause;
+            @OpenPause.canceled += instance.OnOpenPause;
+            @PauseDisactive.started += instance.OnPauseDisactive;
+            @PauseDisactive.performed += instance.OnPauseDisactive;
+            @PauseDisactive.canceled += instance.OnPauseDisactive;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -844,6 +918,12 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @OpenPause.started -= instance.OnOpenPause;
+            @OpenPause.performed -= instance.OnOpenPause;
+            @OpenPause.canceled -= instance.OnOpenPause;
+            @PauseDisactive.started -= instance.OnPauseDisactive;
+            @PauseDisactive.performed -= instance.OnPauseDisactive;
+            @PauseDisactive.canceled -= instance.OnPauseDisactive;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1037,6 +1117,8 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         void OnOpenInventory(InputAction.CallbackContext context);
         void OnCloseInventory(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+        void OnOpenPause(InputAction.CallbackContext context);
+        void OnPauseDisactive(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -1,20 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PauseActive : MonoBehaviour
 {
     [SerializeField] private GameObject PauseScreen;
-    void Start()
+    private PlayerInputSystem _playerInputSystem;
+    private void Start()
     {
         PauseScreen.SetActive(false);
+
+        _playerInputSystem = new PlayerInputSystem();
+        _playerInputSystem.Player.OpenPause.performed += ctx => OpenPause();
     }
-    void Update()
+
+    private void OpenPause()
     {
-        //if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "Main")
-        //{
-        //    PauseScreen.SetActive(true);
-        //}
+        PauseScreen.SetActive(true);
+    }
+
+    private void OnEnable()
+    {
+        _playerInputSystem.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _playerInputSystem.Disable();
     }
 }
+

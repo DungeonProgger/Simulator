@@ -14,6 +14,8 @@ public class Shop : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image PurchasesImage;
     [SerializeField] private UnityEngine.UI.Image PurchasesImage1;
     [SerializeField] private GameObject NewSeeds;
+    private FruitsHandler fruitsHandlerScript;
+    private Tool[] tools;
 
     private void Start()
     {
@@ -22,6 +24,8 @@ public class Shop : MonoBehaviour
         BuySeedsButton.SetActive(true);
         BuyShowelButton.SetActive(true);
         PurchasesImage1.enabled = false;
+        FruitsHandler fruitsHandlerScript = GameObject.Find("Player").GetComponent<FruitsHandler>();
+        tools = FindObjectsOfType<Tool>();
     }
     private void Update()
     {
@@ -33,13 +37,11 @@ public class Shop : MonoBehaviour
     }
     public void SellTomat()
     {
-        FruitsHandler fruitsHandlerScript = GameObject.Find("Player").GetComponent<FruitsHandler>();
         fruitsHandlerScript.money += fruitsHandlerScript.tomatoCount * 5;
         fruitsHandlerScript.tomatoCount = 0;
     }
     public void BuySeeds()
     {
-        FruitsHandler fruitsHandlerScript = GameObject.Find("Player").GetComponent<FruitsHandler>();      
         if (fruitsHandlerScript.money >= 5 && BuySeedsButton.activeSelf == true)
         {
             BuySeedsButton.SetActive(false);
@@ -48,16 +50,21 @@ public class Shop : MonoBehaviour
             NewSeeds.SetActive(true);
         }
     }
-    public void BuyShovel()
+    public void BuyTool(Tool upgradedTool)
     {
-        FruitsHandler fruitsHandlerScript = GameObject.Find("Player").GetComponent<FruitsHandler>();
-        Tool ToolScript = GameObject.Find("WorkingPart").GetComponent<Shovel>();
-        if (fruitsHandlerScript.money >= 20 && BuyShowelButton.activeSelf == true) 
+        foreach (var tool in tools)
         {
-            BuyShowelButton.SetActive(false);
-            PurchasesImage1.enabled = true;
-            fruitsHandlerScript.money -= 20;
-            ToolScript.Power = 100;
+            if (tool == upgradedTool)
+            {
+                if (fruitsHandlerScript.money >= 20 && BuyShowelButton.activeSelf == true)
+                {
+                    BuyShowelButton.SetActive(false);
+                    PurchasesImage1.enabled = true;
+                    fruitsHandlerScript.money -= 20;
+                    //upgradedTool.Upgrade(100);
+                }
+                break;
+            }
         }
     }
 }
